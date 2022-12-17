@@ -63,7 +63,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://ofarouq310.github.io/math-magicians/)
+- [Live Demo Link](https://ofarouq310.github.io/bookstore-app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
