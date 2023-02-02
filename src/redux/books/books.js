@@ -1,26 +1,31 @@
+const CREATE_BOOK = 'books/books/ADD_BOOK';
+const REMOVE_BOOK = 'books/books/REMOVE_BOOK';
+
 export function addBook(book) {
   return {
-    type: 'CREATE_BOOK',
+    type: CREATE_BOOK,
     payload: book,
   };
 }
 
 export function deleteBook(book) {
   return {
-    type: 'REMOVE_BOOK',
+    type: REMOVE_BOOK,
     payload: book,
   };
 }
 
-export default function booksReducer(books = [], action) {
-  switch (action.type) {
-    case 'CREATE_BOOK':
-      return [...books, action.payload];
+const initialState = [];
 
-    case 'REMOVE_BOOK':
-      return books.filter((book) => book.id !== action.payload.id);
+export default function booksReducer(state = initialState, action) {
+  switch (action.type) {
+    case CREATE_BOOK:
+      return [...state, action.payload];
+
+    case REMOVE_BOOK:
+      return state.filter((book) => book.id !== action.payload.id);
 
     default:
-      return books;
+      return state;
   }
 }
