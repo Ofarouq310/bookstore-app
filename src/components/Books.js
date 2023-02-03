@@ -9,7 +9,6 @@ const Books = (props) => {
   const dispatch = useDispatch();
 
   const handleDeletion = () => {
-    // e.preventDefault();
     dispatch(deleteBook(id));
   };
 
@@ -23,9 +22,15 @@ const Books = (props) => {
 };
 
 Books.propTypes = {
-  author: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  author: PropTypes.string,
+  title: PropTypes.string,
+  id: PropTypes.string,
+};
+
+Books.defaultProps = {
+  author: '',
+  title: '',
+  id: '',
 };
 
 export default Books;
