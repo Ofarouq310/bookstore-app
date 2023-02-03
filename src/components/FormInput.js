@@ -30,8 +30,9 @@ const FormInput = () => {
 
   return (
     <div>
-      <form>
+      <form className="add-form">
         <input
+          className="input title-input"
           type="text"
           name="title"
           placeholder="Book title"
@@ -39,13 +40,14 @@ const FormInput = () => {
           value={data.title}
         />
         <input
+          className="input author-input"
           type="text"
           name="author"
           placeholder="Author"
           onChange={inputChange}
           value={data.author}
         />
-        <button type="submit" onClick={handleSubmit}>Add Book</button>
+        <button type="submit" onClick={handleSubmit} className="primary-button-big">Add Book</button>
       </form>
     </div>
   );
