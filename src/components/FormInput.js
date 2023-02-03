@@ -1,13 +1,53 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../redux/books/books';
 
-const FormInput = () => (
-  <div>
-    <form>
-      <input type="text" placeholder="Book title" />
-      <input type="text" placeholder="Author" />
-      <input type="submit" value="Add Book" />
-    </form>
-  </div>
-);
+const FormInput = () => {
+  const [data, setData] = React.useState({
+    title: '',
+    author: '',
+    category: 'Fiction',
+  });
 
+  const dispatch = useDispatch();
+  const inputChange = (e) => {
+    const { name, value } = e.target;
+    setData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newBook = {
+      item_id: uuidv4(),
+      ...data,
+    };
+    dispatch(addBook(newBook));
+  };
+
+  return (
+    <div>
+      <form>
+        <input
+          type="text"
+          name="title"
+          placeholder="Book title"
+          onChange={inputChange}
+          value={data.title}
+        />
+        <input
+          type="text"
+          name="author"
+          placeholder="Author"
+          onChange={inputChange}
+          value={data.author}
+        />
+        <button type="submit" onClick={handleSubmit}>Add Book</button>
+      </form>
+    </div>
+  );
+};
 export default FormInput;
