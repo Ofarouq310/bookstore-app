@@ -17,6 +17,11 @@ export const fetchBooks = createAsyncThunk(
       return {
         item_id: key,
         ...books,
+        percentage: '0',
+        progress: {
+          currentChapter: 'Introduction',
+          completed: '0',
+        },
       };
     });
     dispatch({ type: SHOW_BOOKS, payload: newbooks.concat(initialbooks) });
@@ -40,6 +45,11 @@ export default function booksReducer(state = initialbooks, action) {
     case CREATE_BOOK:
       return [...state, {
         ...action.payload,
+        percentage: 0,
+        progress: {
+          currentChapter: 'Introduction',
+          completed: '0',
+        },
       }];
 
     case REMOVE_BOOK:
