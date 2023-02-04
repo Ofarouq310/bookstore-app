@@ -9,7 +9,7 @@ const Booklist = () => {
   const dispatch = useDispatch();
   React.useEffect(() => {
     dispatch(fetchBooks());
-  }, []);
+  }, [dispatch]);
 
   const bookList = books.map((book) => (
     <Books
