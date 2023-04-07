@@ -1,11 +1,5 @@
 <a name="readme-top"></a>
 
-<div align="center">
-
-  <img src="https://github.com/Ofarouq310/Microverse_readme-template/blob/master/murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-</div>
 
 <!-- TABLE OF CONTENTS -->
 
@@ -58,12 +52,6 @@
     <li>Webpack</li>
   </ul>
 </details>
-
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- [Live Demo Link](https://ofarouq310.github.io/bookstore-app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
